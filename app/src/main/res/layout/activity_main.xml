@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity"/>
+    tools:context=".activity.MainActivity"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/toolbar"/>
+
+    <com.ogaclejapan.smarttablayout.SmartTabLayout
+        android:id="@+id/viewPagerTab"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary"
+        android:stl_indicatorAlwaysInCenter="false"
+        android:stl_indicatorWithoutPadding="false"
+        android:stl_indicatorInFront="false"
+        android:stl_indicatorInterpolation="smart"
+        android:stl_indicatorGravity="bottom"
+        android:stl_indicatorColor="#FFF"
+        android:stl_indicatorThickness="4dp"
+        android:stl_indicatorWidth="auto"
+        android:stl_indicatorCornerRadius="2dp"
+        android:stl_overlineColor="#4D000000"
+        android:stl_overlineThickness="0dp"
+        android:stl_underlineColor="#4D000000"
+        android:stl_underlineThickness="1dp"
+        android:stl_dividerColor="@android:color/transparent"
+        android:stl_dividerThickness="1dp"
+        android:stl_defaultTabTextAllCaps="true"
+        android:stl_defaultTabTextColor="#FFF"
+        android:stl_defaultTabTextSize="12sp"
+        android:stl_defaultTabTextHorizontalPadding="16dp"
+        android:stl_defaultTabTextMinWidth="0dp"
+        android:stl_distributeEvenly="true"
+        android:stl_clickable="true"
+        android:stl_titleOffset="24dp"
+        android:stl_drawDecorationAfterTab="false"
+        />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/viewPagerTab"
+        />
+</LinearLayout>
